@@ -332,12 +332,14 @@ body {
     margin-top: 2rem;
     font-size: 1.5rem;
     font-family: 'IBM Pro Mono', monospace;
+    transition: 1s ease-in;
 }
 
 .enter-prompt:hover {
     cursor: pointer;
-    text-shadow: 0px 1px 8px var(--neon-blue);
-    transition: 0.2s;
+    color: var(--neon-purple);
+    text-shadow: 0px 1px 12px var(--neon-blue);
+    transition: 1s;
 }
 
 /* Fade-In Animation */
@@ -456,8 +458,28 @@ body {
     position: relative;
 }
 
+.project-details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.project-details p {
+    white-space: normal;
+    word-wrap: break-word;
+    line-height: 1.5;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1rem;
+    color: var(--neon-green);
+}
+
+.project-details.expanded {
+    max-height: 1000px;
+    opacity: 1;
+}
+
 .project-card:hover {
-    transform: scale(1.02);
     border-color: var(--neon-purple);
 }
 
@@ -475,37 +497,32 @@ body {
     color: #fff;
 }
 
-.project-desc, .project-desc-expand {
-    font-family: 'Exo 2', monospace;
-    font-weight: 300;
-}
-
 .project-desc {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 300;
     margin-top: 0.5rem;
     font-size: 1.2rem;
     color: #ccc;
 }
 
-.project-desc-expand {
-    margin-top: 0.5rem;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: all 0.4s ease;
+.learn-more-btn {
+    font-family: 'Exo 2', monospace;
     font-size: 1rem;
+    display: inline-block;
+    margin-top: 0.5rem;
     color: var(--neon-green);
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
-
-.project-card:hover .project-desc-expand {
-    max-height: 200px;
-    opacity: 1;
-}
+  
 
 .dev-stack {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
     justify-content: center;
+    margin-top: 0.5rem;
 }
 
 .dev-stack span {
@@ -539,6 +556,15 @@ body {
     text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3);
 }
 
+.contact p {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1rem;
+    color: #ccc;
+    display: inline-block;
+    align-items: center;
+    max-width: 800px;
+}
+
 .contact-badges {
     display: flex;
     flex-wrap: wrap;
@@ -551,6 +577,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background-color: rgba(255, 255, 255, 0.05);
     padding: 1rem;
     border-radius: 12px;
@@ -574,4 +601,8 @@ body {
 .contact-badge:hover {
     transform: translateY(-5px) scale(1.05);
     box-shadow: 0 0 10px var(--neon-red);
+}
+
+.resume-img {
+    filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(46deg) brightness(114%) contrast(100%);
 }

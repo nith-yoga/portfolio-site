@@ -21,6 +21,17 @@ const observer = new IntersectionObserver((entries, observer) => {
 
 observer.observe(hero);
 
+// Learn More Button (Projects Cards)
+document.querySelectorAll('.learn-more-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    const details = button.nextElementSibling;
+    const isVisible = details.classList.contains('expanded');
+
+    details.classList.toggle('expanded');
+    button.textContent = isVisible ? '[Learn More]' : '[Show Less]';
+  });
+})
+
 // Hamburger Bar Trigger
 const hamburger = document.getElementById('hamburger-btn');
 const mobileNav = document.getElementById('mobile-nav');
