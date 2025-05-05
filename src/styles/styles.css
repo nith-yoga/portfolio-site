@@ -56,6 +56,10 @@ body {
 }
 
 .bg-video {
+    height: 100vh;
+    object-fit: cover;
+    width: 100%;
+    position: absolute;
     z-index: 0;
     filter: grayscale(100%) brightness(0.6) contrast(1.1);
 }
@@ -92,6 +96,7 @@ body {
 .hero-content {
     max-width: 800px;
     margin: auto;
+    flex-wrap: wrap;
 }
 
 .site-title, .subtitle, .job-title {
@@ -155,6 +160,7 @@ body {
 }
 
 .nav-list {
+    flex-wrap: wrap;
     list-style: none;
     padding: 0;
     display: flex;
@@ -356,7 +362,6 @@ body {
 
 .about-container {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 2rem;
@@ -369,7 +374,7 @@ body {
 }
 
 .about-img img {
-    width: 400px;
+    max-width: 400px;
     height: 300px;
     border-radius: 50%;
     object-fit: cover;
@@ -377,6 +382,7 @@ body {
 }
 
 .about-content {
+    flex-wrap: wrap;
     max-width: 600px;
     font-family: 'IBM Plex Mono', courier, monospace;
 }
@@ -411,6 +417,7 @@ body {
   
 /* ### PROJECTS SECTION ### */
 .projects-container {
+    flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
@@ -533,6 +540,7 @@ body {
 .contact {
     text-align: center;
     padding: 4rem 2rem;
+    flex-wrap: wrap;
 }
 
 .contact h2 {
@@ -590,4 +598,35 @@ body {
 
 .resume-img {
     filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(46deg) brightness(114%) contrast(100%);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    .about-img img {
+        max-width: 400px;
+        margin-bottom: 1rem;
+    }
+
+    .about-content {
+        max-width: 100%;
+    }
+
+    .hero-content {
+        padding: 1rem;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .site-title {
+        font-size: 1.5rem;
+    }
 }
